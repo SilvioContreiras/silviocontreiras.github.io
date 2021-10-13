@@ -4,6 +4,10 @@
     margin-bottom: 25px;
 }
 
+.w3-text-black h2 {
+    font-size: 26px;
+}
+
 .w3-display-container img {
     width: 50%!important;
     height: 29%;
