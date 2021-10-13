@@ -1,0 +1,16 @@
+
+
+.w3-display-container {
+    margin-bottom: 25px;
+}
+
+.w3-display-container img {
+    width: 60%!important;
+    height: 29%;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.w3-display-bottomleft {
+    bottom: -42px;
+}
