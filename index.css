@@ -18,3 +18,7 @@
 .w3-display-bottomleft {
     bottom: -42px;
 }
+
+.w3-twothird .wave {
+    font-size: 30px;
+}
