@@ -1,317 +1,432 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Sílvio Contreiras - Resume</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Custom wave animation for the emoji */
-        @keyframes wave-animation {
-            0% { transform: rotate(0deg); }
-            15% { transform: rotate(14deg); }
-            30% { transform: rotate(-8deg); }
-            45% { transform: rotate(14deg); }
-            60% { transform: rotate(-4deg); }
-            75% { transform: rotate(10deg); }
-            100% { transform: rotate(0deg); }
-        }
-        .wave {
-            animation: wave-animation 2.5s infinite;
-            transform-origin: 70% 70%;
-            display: inline-block;
-        }
-    </style>
+  <title>Sílvio Contreiras - Resume</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Custom wave animation for the emoji */
+    @keyframes wave-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      15% {
+        transform: rotate(14deg);
+      }
+
+      30% {
+        transform: rotate(-8deg);
+      }
+
+      45% {
+        transform: rotate(14deg);
+      }
+
+      60% {
+        transform: rotate(-4deg);
+      }
+
+      75% {
+        transform: rotate(10deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .wave {
+      animation: wave-animation 2.5s infinite;
+      transform-origin: 70% 70%;
+      display: inline-block;
+    }
+
+    /* Hide skills/languages content by default on small screens */
+    #skills-toggle-container {
+      display: block;
+      /* Show the toggle button container on mobile */
+    }
+
+    #collapsible-content {
+      display: none;
+      /* Hidden by default on small screens */
+      transition: max-height 0.3s ease-out;
+      /* Smooth transition for expand/collapse */
+      max-height: 0;
+      /* Initial state for transition */
+      overflow: hidden;
+      /* Hide overflow during transition */
+    }
+
+    /* When 'expanded' class is added, show content */
+    #collapsible-content.expanded {
+      max-height: 1000px;
+      /* Adjust as needed for content height, ensure it's larger than the actual content */
+      display: block;
+    }
+
+    /* Styles for the toggle icon */
+    .toggle-icon {
+      transition: transform 0.3s ease-out;
+      /* Smooth rotation transition */
+    }
+
+    .toggle-icon.rotated {
+      transform: rotate(45deg);
+      /* Rotate for 'minus' effect, using plus icon */
+    }
+
+    /* On medium and larger screens, show skills/languages and hide the toggle button */
+    @media (min-width: 768px) {
+
+      /* md breakpoint */
+      #skills-toggle-container {
+        display: none !important;
+        /* Hide the toggle button */
+      }
+
+      #collapsible-content {
+        display: block !important;
+        /* Always show content */
+        max-height: none !important;
+        /* No max-height constraint */
+      }
+    }
+
+    /* Style for sub-list items */
+    .list-circle {
+      list-style: circle;
+    }
+  </style>
 </head>
+
 <body class="bg-gray-100 p-4 sm:p-6 lg:p-8">
 
-    <!-- Page Container -->
-    <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+  <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
 
-        <!-- The Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="p-6 bg-white text-gray-700 md:shadow-md md:rounded-lg mb-8">
+      <div class="relative mb-6 flex flex-col items-center text-center">
+        <img src="https://avatars.githubusercontent.com/u/26825976?v=4" alt="Sílvio Contreiras Avatar"
+          class="w-48 h-48 rounded-full p-4 object-cover mb-4">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">Sílvio Contreiras</h1>
+        <p class="text-blue-600 text-xl font-medium">Senior Web Developer</p>
+      </div>
 
-            <!-- Left Column -->
-            <div class="md:col-span-1 bg-white text-gray-700 rounded-lg shadow-md p-6">
-                <div class="relative mb-6 flex justify-center">
-                    <img src="https://avatars.githubusercontent.com/u/26825976?v=4" alt="Avatar" class="w-48 h-48 rounded-full p-4 object-cover">
-                    <!-- Removed the name from here as requested -->
-                </div>
-
-                <div class="mb-6">
-                    <p class="flex items-center mb-2"><i class="fa fa-envelope fa-fw mr-3 text-blue-500 text-lg"></i>silvio7dcontreiras@gmail.com.com</p>
-                    <p class="flex items-center mb-2"><i class="fa fa-phone fa-fw mr-3 text-blue-500 text-lg"></i>+244 923024717 | +5511920095598</p>
-                    <p class="flex items-center mb-2">
-                        <a target="_blank" href="https://github.com/SilvioContreiras" class="hover:text-blue-500 transition-colors duration-200 flex items-center">
-                            <i class="fa fa-github fa-fw mr-3 text-blue-500 text-lg"></i>SilvioContreiras
-                        </a>
-                    </p>
-                    <p class="flex items-center">
-                        <a target="_blank" href="https://www.linkedin.com/in/silvio-contreiras/" class="hover:text-blue-500 transition-colors duration-200 flex items-center">
-                            <i class="fa fa-linkedin fa-fw mr-3 text-blue-500 text-lg"></i>silvio-contreiras
-                        </a>
-                    </p>
-                </div>
-                <hr class="border-gray-200 my-4">
-
-                <!-- Skills Section -->
-                <div class="mb-6">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fa fa-asterisk fa-fw mr-3 text-blue-500 text-lg"></i>Skills</h3>
-                    <!-- Key Technologies/Core Competencies -->
-                    <div class="mb-4">
-                        <h4 class="font-medium text-gray-800 mb-2">Key Technologies</h4>
-                        <ul class="list-disc list-inside text-sm text-gray-600">
-                            <li>React, TypeScript, NodeJS, AWS, PostgreSQL, MongoDB</li>
-                        </ul>
-                    </div>
-                    <div class="grid grid-cols-1 gap-4">
-                        <div>
-                            <h4 class="font-medium text-gray-800 mb-2">Frontend</h4>
-                            <ul class="list-disc list-inside text-sm text-gray-600">
-                                <li>HTML, CSS, JavaScript, TypeScript</li>
-                                <li>React, Vue, Redux, Next.js, Sass</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-gray-800 mb-2">UI Libraries</h4>
-                            <ul class="list-disc list-inside text-sm text-gray-600">
-                                <li>Material UI, Ant Design, Tailwind CSS, Figma</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-gray-800 mb-2">Back-End</h4>
-                            <ul class="list-disc list-inside text-sm text-gray-600">
-                                <li>NodeJS</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-gray-800 mb-2">Database</h4>
-                            <ul class="list-disc list-inside text-sm text-gray-600">
-                                <li>PostgreSQL, MongoDB</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-medium text-gray-800 mb-2">DevOps & Observability</h4>
-                            <ul class="list-disc list-inside text-sm text-gray-600">
-                                <li>AWS, Docker, Git, Jenkins, DataDog, Sonar</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <hr class="border-gray-200 my-4">
-
-                <!-- Methodologies Section -->
-                <div class="mb-6">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fa fa-cogs fa-fw mr-3 text-blue-500 text-lg"></i>Methodologies</h3>
-                    <ul class="list-disc list-inside text-sm text-gray-600">
-                        <li>Agile, Scrum, Kanban</li>
-                    </ul>
-                </div>
-                <hr class="border-gray-200 my-4">
-
-                <!-- Soft Skills Section -->
-                <div class="mb-6">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fa fa-lightbulb-o fa-fw mr-3 text-blue-500 text-lg"></i>Soft Skills</h3>
-                    <ul class="list-disc list-inside text-sm text-gray-600">
-                        <li>Rapid learner and highly adaptable to new technologies and environments.</li>
-                        <li>Exceptional collaborator and communicator, fostering effective team dynamics.</li>
-                        <li>Dedicated and reliable professional, committed to project success.</li>
-                        <li>Proactive and eager to embrace new challenges and drive innovation.</li>
-                    </ul>
-                </div>
-                <hr class="border-gray-200 my-4">
-
-                <!-- Languages Section -->
-                <div class="mb-6">
-                    <h3 class="text-xl font-semibold mb-4 flex items-center"><i class="fa fa-globe fa-fw mr-3 text-blue-500 text-lg"></i>Languages</h3>
-                    <p class="text-sm text-gray-600 mb-2">Portuguese <span class="font-medium">(Native)</span></p>
-                    <div class="bg-gray-200 rounded-full h-2.5 mb-4">
-                        <div class="bg-blue-500 h-2.5 rounded-full" style="width: 100%;"></div>
-                    </div>
-                    <p class="text-sm text-gray-600 mb-2">English <span class="font-medium">(Advanced)</span></p>
-                    <div class="bg-gray-200 rounded-full h-2.5 mb-4">
-                        <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Column -->
-            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
-
-                <!-- About Me Section -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
-                    <h2 class="text-2xl font-semibold mb-4 flex items-center text-gray-800"><i class="fa fa-user fa-fw mr-3 text-blue-500 text-xl"></i>Hi <span class="wave text-3xl ml-2">&#128075;&#127999;</span>, I'm Sílvio</h2>
-                    <p class="text-gray-700 leading-relaxed text-left">
-                        A highly accomplished Senior Software Developer with over 9 years of experience, specializing in building robust, scalable, and user-centric web applications. Proficient in modern frontend frameworks like React and TypeScript, coupled with strong backend development skills in NodeJS and database management (PostgreSQL, MongoDB). I thrive in Agile environments, consistently delivering impactful solutions that enhance performance, optimize user experience, and drive significant business growth. A collaborative team player and mentor, I am eager to take on challenging roles that leverage my comprehensive technical expertise and foster continuous innovation.
-                    </p>
-                </div>
-
-                <!-- Work Experience Section -->
-                <div class="mb-8">
-                    <h2 class="text-2xl font-semibold mb-4 flex items-center text-gray-800"><i class="fa fa-suitcase fa-fw mr-3 text-blue-500 text-xl"></i>Work Experience</h2>
-
-                    <!-- Webmotors -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Engineer | Webmotors (Automotive Marketplace)</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>November 2022 - <span class="ml-1 px-2 py-0.5 bg-blue-500 text-white text-xs rounded-full">Current</span></p>
-                        <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
-                            <li><strong>Team Collaboration:</strong> Collaborated effectively within multidisciplinary teams (QA, backend, frontend, UI/UX, Agile experts).</li>
-                            <li><strong>Technical Leadership:</strong> Led technical interviews, mentored mid-level developers via pair programming, provided candidate feedback, and conducted rigorous code reviews to ensure best practices and maintainability.</li>
-                            <li><strong>Feature Development & Optimization:</strong>
-                                <ul class="list-circle list-inside ml-4">
-                                    <li>Spearheaded feature development using React to enhance scalability.</li>
-                                    <li>Implemented A/B tests to optimize user experience and performance.</li>
-                                    <li>Maintained legacy applications, ensuring reliability and performance, and resolved bugs to uphold high software quality.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Key Achievements:</strong>
-                                <ul class="list-circle list-inside ml-4 font-medium">
-                                    <li>Rebuilt the web engine search results using Next.js, TypeScript, Storybook, and a monorepo architecture, resulting in a -22s improvement in the page loading speed index (SEO) and an additional revenue of + R$ 2MM in one month.</li>
-                                    <li>Architected a new CRM Client project using module federation microfrontends, clean architecture, and AWS services (S3, Lambda Edge) while setting up CI/CD pipelines with GitHub and Jenkins.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Technologies & Tools:</strong> HTML, CSS, JavaScript, TypeScript, React, Redux, Next.js, TanStack Query, REST API, WebSocket, AWS, NodeJS, Styled-components, Webpack, Docker, Jenkins, Git, Storybook, DataDog, Jira, Confluence.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Raia Drogasil -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Developer | Raia Drogasil (Pharmaceutical)</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>March 2021 - November 2022</p>
-                        <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
-                            <li>Reconstructed a query terminal system, significantly improving application performance and SEO metrics.</li>
-                            <li><strong>Technologies:</strong> JavaScript, TypeScript, React, REST API, Webpack, Git.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Compasso UOL -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-lg font-semibold text-gray-900">Software Developer | Compasso UOL (IT Services)</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>December 2020 - March 2021</p>
-                        <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
-                            <li>Enhanced site performance, leading to improved Google Lighthouse metrics.</li>
-                            <li>Resolved bugs and implemented new features.</li>
-                            <li><strong>Technologies:</strong> JavaScript, React, Redux, Material UI, REST API, Webpack, Git.</li>
-                            <li><strong>Client:</strong> The BodyShop Brasil</li>
-                        </ul>
-                    </div>
-
-                    <!-- Grupo Planetun -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Developer | Grupo Planetun (IT Services)</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>September 2020 - December 2020</p>
-                        <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
-                            <li>Developed an online car insurance application for Mapfre by rewriting a legacy system (from JSP to React).</li>
-                            <li><strong>Technologies:</strong> JavaScript, React, Redux, Ant Design.</li>
-                            <li><strong>Client:</strong> Mapfre, Insurance</li>
-                        </ul>
-                    </div>
-
-                    <!-- Maitha -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Developer | Maitha (IT Services)</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>January 2020 - August 2020</p>
-                        <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
-                            <li>Developed new features and continuous improvements for an internal system.</li>
-                            <li><strong>Technologies:</strong> JavaScript, React, Redux Rematch.</li>
-                            <li><strong>Client:</strong> TradeMaster, Fintech</li>
-                        </ul>
-                    </div>
-
-                    <!-- Dafiti Group -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-lg font-semibold text-gray-900">Mid-Level Frontend Developer | Dafiti Group (E-commerce)</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>December 2015 - December 2019</p>
-                        <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
-                            <li>Led the development of responsive web applications and website redesigns to improve user experience.</li>
-                            <li>Collaborated directly with Creative, UX/UI, SEO, Marketplace, Merchandising, and Commercial teams.</li>
-                            <li><strong>Technologies:</strong> HTML5, CSS3, JavaScript, React, Redux, Ajax, JSON, REST API.</li>
-                            <li><strong>Project:</strong> Portal</li>
-                        </ul>
-                    </div>
-
-                    <!-- Internship – SMPIR -->
-                    <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
-                        <h3 class="text-lg font-semibold text-gray-900">Internship | SMPIR</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2015</p>
-                        <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
-                            <li>Provided computer support and maintenance services.</li>
-                            <li>Configured network access permissions and set up Exchange email accounts on Outlook.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Trainee – UNASP-SP -->
-                    <div class="mb-6">
-                        <h3 class="text-lg font-semibold text-gray-900">Trainee | UNASP-SP</h3>
-                        <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2014</p>
-                        <p class="text-gray-700 leading-relaxed text-sm"><strong>Technologies:</strong> C#, HTML 5, JavaScript, MVC, ASP.NET, SQL Server.</p>
-                    </div>
-                </div>
-
-                <!-- Education Section -->
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4 flex items-center text-gray-800"><i class="fa fa-graduation-cap fa-fw mr-3 text-blue-500 text-xl"></i>Education & Certifications</h2>
-
-                    <div class="mb-6 pb-4 border-b border-gray-200">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Education</h3>
-                        <!-- Post-graduation in Web Engineering -->
-                        <div class="mb-4">
-                            <h4 class="text-md font-medium text-gray-800">Post-graduation in Web Engineering</h4>
-                            <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2018</p>
-                            <p class="text-gray-700 leading-relaxed text-sm">Senac</p>
-                        </div>
-
-                        <!-- Analysis and Systems Development -->
-                        <div class="mb-4">
-                            <h4 class="text-md font-medium text-gray-800">Analysis and Systems Development</h4>
-                            <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2016</p>
-                            <p class="text-gray-700 leading-relaxed text-sm">UNASP - SP</p>
-                        </div>
-                    </div>
-
-                    <div class="mb-6">
-                      <h3 class="text-lg font-semibold text-gray-900 mb-2">Certifications</h3>
-                      <!-- Udacity: Nanodegree in Front-End Web Development -->
-                      <div class="mb-4">
-                          <h4 class="text-md font-medium text-gray-800">Nanodegree in Front-End Web Development</h4>
-                          <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>Completed in 2018</p>
-                          <p class="text-gray-700 leading-relaxed text-sm">Udacity</p>
-                      </div>
-
-                      <!-- Rocketseat Bootcamp: React, NodeJS, TypeScript -->
-                      <div class="mb-4">
-                          <h4 class="text-md font-medium text-gray-800">Bootcamp: React, NodeJS, TypeScript</h4>
-                          <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>Completed in 2023</p>
-                          <p class="text-gray-700 leading-relaxed text-sm">Rocketseat</p>
-                      </div>
-
-                      <!-- Udemy: AWS -->
-                      <div class="mb-4">
-                          <h4 class="text-md font-medium text-gray-800">AWS Course</h4>
-                          <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>Completed in 2024</p>
-                          <p class="text-gray-700 leading-relaxed text-sm">Udemy</p>
-                      </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- End Grid -->
+      <div class="p-6 bg-gray-50 rounded-lg shadow-sm text-center">
+        <h2 class="text-2xl font-semibold mb-4 flex items-center justify-center text-gray-800">
+          Hi <span class="wave text-3xl ml-2">&#128075;&#127999;</span>, I'm Sílvio
+        </h2>
+        <p class="text-gray-700 leading-relaxed text-left">
+          With over 9 years of experience, I'm an accomplished software developer specializing in building robust,
+          scalable, and user-centric web applications. I'm proficient in modern frontend frameworks like React and
+          TypeScript, coupled with strong backend development skills in NodeJS and database management (PostgreSQL,
+          MongoDB). I thrive in Agile environments, consistently delivering impactful solutions that enhance
+          performance, optimize user experience, and drive significant business growth. A collaborative team player and
+          mentor, I'm eager to take on challenging roles that leverage my comprehensive technical expertise and foster
+          continuous innovation.
+        </p>
+      </div>
+      <hr class="border-gray-200 my-4 md:hidden">
     </div>
 
-    <!-- End Page Container -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 pt-0">
+      <div class="md:col-span-1 bg-white text-gray-700">
 
-    <footer class="bg-blue-500 text-white text-center p-4 mt-8 rounded-lg shadow-md">
-        <p class="text-sm">&copy; <script>document.write(new Date().getFullYear())</script> Sílvio Contreiras. All rights reserved.</p>
-    </footer>
+        <div class="mb-8 p-6 bg-white md:shadow-md md:rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 flex items-center"><i
+              class="fa fa-address-book-o fa-fw mr-3 text-blue-500 text-lg"></i>Contact Me</h3>
+          <p class="flex items-center mb-2 text-sm"><i class="fa fa-envelope fa-fw mr-3 text-blue-500 text-lg"></i><a
+              href="mailto:silvio7dcontreiras@gmail.com" class="hover:underline">silvio7dcontreiras@gmail.com</a></p>
+          <p class="flex items-center mb-2 text-sm"><i class="fa fa-phone fa-fw mr-3 text-blue-500 text-lg"></i><a
+              href="tel:+244923024717" class="hover:underline">+244 923024717</a>&nbsp;|&nbsp;<a
+              href="tel:+5511920095598" class="hover:underline">+5511920095598</a></p>
+          <p class="flex items-center mb-2 text-sm">
+            <a target="_blank" href="https://github.com/SilvioContreiras"
+              class="hover:text-blue-500 transition-colors duration-200 flex items-center">
+              <i class="fa fa-github fa-fw mr-3 text-blue-500 text-lg"></i>SilvioContreiras
+            </a>
+          </p>
+          <p class="flex items-center text-sm">
+            <a target="_blank" href="https://www.linkedin.com/in/silvio-contreiras/"
+              class="hover:text-blue-500 transition-colors duration-200 flex items-center">
+              <i class="fa fa-linkedin fa-fw mr-3 text-blue-500 text-lg"></i>silvio-contreiras
+            </a>
+          </p>
+        </div>
+        <hr class="border-gray-200 my-4 md:hidden">
+        <div id="skills-toggle-container" class="mb-4">
+          <button id="skills-toggle"
+            class="w-full bg-blue-500 text-white py-2 rounded-md flex items-center justify-center" aria-expanded="false"
+            aria-controls="collapsible-content">
+            <i id="toggle-icon" class="fa fa-plus mr-2 toggle-icon"></i>
+            <span id="toggle-text">Show More Details</span>
+          </button>
+        </div>
+
+        <div id="collapsible-content" class="p-6 bg-white md:shadow-md md:rounded-lg">
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 flex items-center"><i
+                class="fa fa-code fa-fw mr-3 text-blue-500 text-lg"></i>Technical Skills</h3>
+            <p class="text-sm text-gray-600">
+              <strong>Languages/Frameworks:</strong> TypeScript, JavaScript, React, NodeJS, Next.js, Vue, Redux,
+              Express, Fastify, Nest.js, Sass, HTML, CSS
+            </p>
+            <p class="text-sm text-gray-600 mt-1">
+              <strong>Databases/ORMs:</strong> PostgreSQL, MongoDB, TypeORM
+            </p>
+            <p class="text-sm text-gray-600 mt-1">
+              <strong>Cloud/DevOps:</strong> AWS, S3, CloudFront, CloudFormation, Docker, Git, Jenkins, DataDog, Sonar
+            </p>
+            <p class="text-sm text-gray-600 mt-1">
+              <strong>UI Libraries & Tools:</strong> Material UI, Ant Design, Tailwind CSS, Figma, Webpack, Vite, REST
+              API, WebSocket
+            </p>
+          </div>
+          <hr class="border-gray-200 my-4">
+
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 flex items-center"><i
+                class="fa fa-cogs fa-fw mr-3 text-blue-500 text-lg"></i>Methodologies</h3>
+            <p class="text-sm text-gray-600">Agile, Scrum, Kanban</p>
+          </div>
+          <hr class="border-gray-200 my-4">
+
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 flex items-center"><i
+                class="fa fa-lightbulb-o fa-fw mr-3 text-blue-500 text-lg"></i>Soft Skills</h3>
+            <ul class="list-disc list-inside text-sm text-gray-600">
+              <li>Rapid learner and highly adaptable to new technologies and environments.</li>
+              <li>Exceptional collaborator and communicator, fostering effective team dynamics.</li>
+              <li>Dedicated and reliable professional, committed to project success.</li>
+              <li>Proactive and eager to embrace new challenges and drive innovation.</li>
+            </ul>
+          </div>
+          <hr class="border-gray-200 my-4">
+
+          <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-4 flex items-center"><i
+                class="fa fa-globe fa-fw mr-3 text-blue-500 text-lg"></i>Languages</h3>
+            <p class="text-sm text-gray-600 mb-2">Portuguese <span class="font-medium">(Native)</span></p>
+            <div class="bg-gray-200 rounded-full h-2.5 mb-4">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 100%;"></div>
+            </div>
+            <p class="text-sm text-gray-600 mb-2">English <span class="font-medium">(Advanced)</span></p>
+            <div class="bg-gray-200 rounded-full h-2.5 mb-4">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6">
+        <div class="mb-8">
+          <h2 class="text-2xl font-semibold mb-4 flex items-center text-gray-800"><i
+              class="fa fa-suitcase fa-fw mr-3 text-blue-500 text-xl"></i>Work Experience</h2>
+
+          <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+            <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Engineer | Webmotors (Automotive
+              Marketplace)</h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>November
+              2022 - <span class="ml-1 px-2 py-0.5 bg-blue-500 text-white text-xs rounded-full">Current</span></p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+              <li><strong>Team Collaboration:</strong> Collaborated effectively within multidisciplinary teams (QA,
+                backend, frontend, UI/UX, Agile experts).</li>
+              <li><strong>Technical Leadership:</strong> Led technical interviews, mentored mid-level developers via
+                pair programming, provided candidate feedback, and conducted rigorous code reviews to ensure best
+                practices and maintainability.</li>
+              <li><strong>Feature Development & Optimization:</strong>
+                <ul class="list-circle list-inside ml-4">
+                  <li>Spearheaded feature development using React to enhance scalability.</li>
+                  <li>Implemented A/B tests to optimize user experience and performance.</li>
+                  <li>Maintained legacy applications, ensuring reliability and performance, and resolved bugs to uphold
+                    high software quality.</li>
+                </ul>
+              </li>
+              <li><strong>Key Achievements:</strong>
+                <ul class="list-circle list-inside ml-4 font-medium">
+                  <li>Rebuilt the web engine search results using Next.js, TypeScript, Storybook, and a monorepo
+                    architecture, resulting in a -22s improvement in the page loading speed index (SEO) and an
+                    additional revenue of + R$ 2MM in one month.</li>
+                  <li>Architected a new CRM Client project using module federation microfrontends, clean architecture,
+                    and AWS services (S3, Lambda Edge) while setting up CI/CD pipelines with GitHub and Jenkins.</li>
+                </ul>
+              </li>
+              <li><strong>Technologies & Tools:</strong> HTML, CSS, JavaScript, TypeScript, React, Redux, Next.js,
+                TanStack Query, REST API, WebSocket, AWS, NodeJS, Styled-components, Webpack, Docker, Jenkins, Git,
+                Storybook, DataDog, Jira, Confluence.</li>
+            </ul>
+          </div>
+
+          <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+            <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Developer | Raia Drogasil (Pharmaceutical)
+            </h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>March 2021
+              - November 2022</p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+              <li>Reconstructed a query terminal system, significantly improving application performance and SEO
+                metrics.</li>
+              <li><strong>Technologies:</strong> JavaScript, TypeScript, React, REST API, Webpack, Git.</li>
+            </ul>
+          </div>
+
+          <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+            <h3 class="text-lg font-semibold text-gray-900">Software Developer | Compasso UOL (IT Services)</h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>December
+              2020 - March 2021</p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+              <li>Enhanced site performance, leading to improved Google Lighthouse metrics.</li>
+              <li>Resolved bugs and implemented new features.</li>
+              <li><strong>Technologies:</strong> JavaScript, React, Redux, Material UI, REST API, Webpack, Git.</li>
+              <li><strong>Client:</strong> The BodyShop Brasil</li>
+            </ul>
+          </div>
+
+          <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+            <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Developer | Grupo Planetun (IT Services)
+            </h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>September
+              2020 - December 2020</p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+              <li>Developed an online car insurance application for Mapfre by rewriting a legacy system (from JSP to
+                React).</li>
+              <li><strong>Technologies:</strong> JavaScript, React, Redux, Ant Design.</li>
+              <li><strong>Client:</strong> Mapfre, Insurance</li>
+            </ul>
+          </div>
+
+          <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+            <h3 class="text-lg font-semibold text-gray-900">Senior Frontend Developer | Maitha (IT Services)</h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>January
+              2020 - August 2020</p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+              <li>Developed new features and continuous improvements for an internal system.</li>
+              <li><strong>Technologies:</strong> JavaScript, React, Redux Rematch.</li>
+              <li><strong>Client:</strong> TradeMaster, Fintech</li>
+            </ul>
+          </div>
+
+          <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+            <h3 class="text-lg font-semibold text-gray-900">Mid-Level Frontend Developer | Dafiti Group (E-commerce)
+            </h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>December
+              2015 - December 2019</p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+              <li>Led the development of responsive web applications and website redesigns to improve user experience.
+              </li>
+              <li>Collaborated directly with Creative, UX/UI, SEO, Marketplace, Merchandising, and Commercial teams.
+              </li>
+              <li><strong>Technologies:</strong> HTML5, CSS3, JavaScript, React, Redux, Ajax, JSON, REST API.</li>
+              <li><strong>Project:</strong> Portal</li>
+            </ul>
+          </div>
+
+          <div class="mb-6 pb-4 border-b border-gray-200 last:border-b-0">
+            <h3 class="text-lg font-semibold text-gray-900">Internship | SMPIR</h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2015</p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-sm">
+              <li>Provided computer support and maintenance services.</li>
+              <li>Configured network access permissions and set up Exchange email accounts on Outlook.</li>
+            </ul>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900">Trainee | UNASP-SP</h3>
+            <p class="text-blue-600 text-sm mb-2 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2014</p>
+            <p class="text-gray-700 leading-relaxed text-sm"><strong>Technologies:</strong> C#, HTML 5, JavaScript, MVC,
+              ASP.NET, SQL Server.</p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-semibold mb-4 flex items-center text-gray-800"><i
+              class="fa fa-graduation-cap fa-fw mr-3 text-blue-500 text-xl"></i>Education & Certifications</h2>
+
+          <div class="mb-6 pb-4 border-b border-gray-200">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Education</h3>
+            <div class="mb-4">
+              <h4 class="text-md font-medium text-gray-800">Post-graduation in Web Engineering</h4>
+              <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2018</p>
+              <p class="text-gray-700 leading-relaxed text-sm">Senac</p>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="text-md font-medium text-gray-800">Analysis and Systems Development</h4>
+              <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>2016</p>
+              <p class="text-gray-700 leading-relaxed text-sm">UNASP - SP</p>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Certifications</h3>
+            <div class="mb-4">
+              <h4 class="text-md font-medium text-gray-800">Nanodegree in Front-End Web Development</h4>
+              <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>Completed
+                in 2018</p>
+              <p class="text-gray-700 leading-relaxed text-sm">Udacity</p>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="text-md font-medium text-gray-800">Bootcamp: React, NodeJS, TypeScript</h4>
+              <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>Completed
+                in 2023</p>
+              <p class="text-gray-700 leading-relaxed text-sm">Rocketseat</p>
+            </div>
+
+            <div class="mb-4">
+              <h4 class="text-md font-medium text-gray-800">AWS Course</h4>
+              <p class="text-blue-600 text-sm mb-1 flex items-center"><i class="fa fa-calendar fa-fw mr-2"></i>Completed
+                in 2024</p>
+              <p class="text-gray-700 leading-relaxed text-sm">Udemy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="bg-blue-500 text-white text-center p-4 mt-8 rounded-lg shadow-md">
+    <p class="text-sm">&copy;
+      <script>document.write(new Date().getFullYear())</script> Sílvio Contreiras. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const skillsToggle = document.getElementById('skills-toggle');
+      const collapsibleContent = document.getElementById('collapsible-content');
+      const toggleIcon = document.getElementById('toggle-icon');
+      const toggleText = document.getElementById('toggle-text');
+
+      if (skillsToggle && collapsibleContent && toggleIcon && toggleText) {
+        skillsToggle.addEventListener('click', function () {
+          const isExpanded = collapsibleContent.classList.toggle('expanded');
+
+          // Update ARIA attribute
+          skillsToggle.setAttribute('aria-expanded', isExpanded);
+
+          // Update text and icon
+          if (isExpanded) {
+            toggleText.textContent = 'Hide Details';
+            toggleIcon.classList.add('rotated'); // Rotate the plus icon to look like a minus
+          } else {
+            toggleText.textContent = 'Show More Details';
+            toggleIcon.classList.remove('rotated');
+          }
+        });
+      }
+    });
+  </script>
 
 </body>
+
 </html>
